@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/lib
+/usr/lib/gcc
+/usr/lib/gcc/x86_64-linux-gnu
+/usr/lib/gcc/x86_64-linux-gnu/8
+/usr/share
+/usr/share/doc
+/usr/share/doc/gcc-8-base
+/usr/share/doc/gcc-8-base/README.Debian.amd64.gz
+/usr/share/doc/gcc-8-base/TODO.Debian
+/usr/share/doc/gcc-8-base/changelog.Debian.gz
+/usr/share/doc/gcc-8-base/copyright
+/usr/lib/gcc/x86_64-linux-gnu/8.0.1

@@ -41,6 +41,8 @@ func child(command ...string) {
 	cmd.Stderr = os.Stderr
 
 	must(syscall.Sethostname([]byte("container")))
+	must(syscall.Chroot("./ubuntu_fs"))
+	must(os.Chdir("./ubuntu_fs"))
 
 	must(cmd.Run())
 }

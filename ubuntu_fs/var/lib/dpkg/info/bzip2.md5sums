@@ -1,0 +1,14 @@
+c55a28e26054cdf4279b156efd4993d3  bin/bunzip2
+c55a28e26054cdf4279b156efd4993d3  bin/bzcat
+e786fc0d18a8c8679897afec7dc20f81  bin/bzdiff
+10a5a0be2ad3f47fff12daaf1c0256c5  bin/bzexe
+2b11565d85da178b3a1942a22d20c624  bin/bzgrep
+c55a28e26054cdf4279b156efd4993d3  bin/bzip2
+d0d7cb4c68e45f8021fa0177bd124e32  bin/bzip2recover
+e243255b6cf3b9403df53cb9cd6176e1  bin/bzmore
+d9ee1fb5db9663ff5d94935cc5ee382e  usr/share/doc/bzip2/copyright
+791ad9d729d9db901a68392928bd22eb  usr/share/man/man1/bzdiff.1.gz
+77b56107ce8803b882eea71afb8ac935  usr/share/man/man1/bzexe.1.gz
+b6d41f037a65083a0daddd839a142de7  usr/share/man/man1/bzgrep.1.gz
+a297df95ad1f65d2d1eff9a2950a1f61  usr/share/man/man1/bzip2.1.gz
+f03debbbd27ed377dcdf2e63436f89bf  usr/share/man/man1/bzmore.1.gz

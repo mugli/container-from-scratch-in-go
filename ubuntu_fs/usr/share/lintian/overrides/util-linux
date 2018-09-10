@@ -1,0 +1,8 @@
+# We have stop, but our unusual init script doesn't match lintian regex.
+util-linux: init.d-script-possible-missing-stop etc/init.d/hwclock.sh 1
+# systemd ships a masking symlink, but lintian doesn't know that.
+util-linux: systemd-no-service-for-init-rcS-script hwclock.sh
+# Lintian is wrong, since on sysvinit-core systems that pulls in lsb-base
+# and on systemd systems this init script is masked.
+# (Same check also in uuid-runtime.lintian-overrides)
+util-linux: init.d-script-needs-depends-on-lsb-base etc/init.d/hwclock.sh (line 45)

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN" "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<policyconfig>
+  <vendor>The Dpkg Project</vendor>
+  <vendor_url>https://wiki.debian.org/Teams/Dpkg</vendor_url>
+  <icon_name>update-alternatives</icon_name>
+  <action id="org.dpkg.pkexec.update-alternatives">
+    <description>Run update-alternatives to modify system alternative selections</description>
+    <description xml:lang="ca">Executa update-alternatives per a modificar les seleccions d'alternatives del sistema</description>
+    <message>Authentication is required to run update-alternatives</message>
+    <message xml:lang="ca">Es requereix autenticació per a executar update-alternatives</message>
+    <defaults>
+      <allow_any>auth_admin_keep</allow_any>
+      <allow_inactive>auth_admin_keep</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/update-alternatives</annotate>
+  </action>
+</policyconfig>
