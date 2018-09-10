@@ -1,8 +1,0 @@
-#!/bin/sh
-set -e
-# Automatically added by dh_installdeb/11.1.6ubuntu2
-dpkg-maintscript-helper rm_conffile /etc/init/hwclock-save.conf 2.28.1-1ubuntu1\~ -- "$@"
-dpkg-maintscript-helper rm_conffile /etc/init/hwclock.conf 2.28.1-1ubuntu1\~ -- "$@"
-dpkg-maintscript-helper rm_conffile /etc/init/hwclock.sh.conf 2.28.1-1ubuntu1\~ -- "$@"
-dpkg-maintscript-helper rm_conffile /etc/cron.weekly/fstrim 2.31.1-0.4ubuntu1\~ -- "$@"
-# End automatically added section

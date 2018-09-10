@@ -1,3 +1,0 @@
-libtinfo 5 libtinfo5 (>= 6.1)
-libtic 5 libtinfo5 (>= 6.1)
-udeb: libtinfo 5 libtinfo5-udeb (>= 6.1)

@@ -4,8 +4,15 @@ This is a toy container build from scratch in Go solely for learning purpose. It
 
 ## What it does
 
-After running (inside Ubuntu):
-`go run main.go run /bin/bash` (needs root privilege!)
+*Before starting, you'll have to unzip the content of `ubuntu_fs.zip` file. This will create a subdirectory called `ubuntu_fs` which will be mounted as our container's root directory.*
+
+You'll have to be inside a Linux box (Ubuntu in my case) to try this.
+
+This will start our container (needs root privilege for creating `cgroup`):
+```
+sudo su
+go run main.go run /bin/bash
+``` 
 
 It will:
 - Fork itself with `CLONE_NEWUTS`, `CLONE_NEWPID`, `CLONE_NEWNS` flags with isolated hostname, processes and mounts
@@ -77,5 +84,5 @@ Restarting VS Code after that will recognize all Linux specific declarations and
 
 ---
 
-PS: the `ubuntu_fs` directory has been extracted from Ubuntu docker image (using `docker export...` command).
+PS: the contents of `ubuntu_fs.zip` file has been extracted from Ubuntu docker image (using `docker export...` command).
 
