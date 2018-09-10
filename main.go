@@ -1,9 +1,12 @@
 package main
 
 import (
+	"io/ioutil"
 	"log"
 	"os"
 	"os/exec"
+	"path/filepath"
+	"strconv"
 	"syscall"
 )
 
@@ -39,6 +42,10 @@ func run(command ...string) {
 
 func child(command ...string) {
 	log.Println("Executing", command, "from child")
+
+	// Create cgroup
+	cg()
+
 	cmd := exec.Command(command[0], command[1:]...)
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
@@ -55,9 +62,26 @@ func child(command ...string) {
 
 	must(cmd.Run())
 
-	//Cleanup mount
+	// Cleanup mount
 	must(syscall.Unmount("proc", 0))
 	must(syscall.Unmount("mytemp", 0))
+}
+
+func cg() {
+	// cgroup location in Ubuntu
+	cgroups := "/sys/fs/cgroup/"
+
+	mem := filepath.Join(cgroups, "memory")
+	kontainer := filepath.Join(mem, "kontainer")
+	os.Mkdir(kontainer, 0755)
+	// Limit memory to 1mb
+	must(ioutil.WriteFile(filepath.Join(kontainer, "memory.limit_in_bytes"), []byte("999424"), 0700))
+	// Cleanup cgroup when it is not being used
+	must(ioutil.WriteFile(filepath.Join(kontainer, "notify_on_release"), []byte("1"), 0700))
+
+	pid := strconv.Itoa(os.Getpid())
+	// Apply this and any child process in this cgroup
+	must(ioutil.WriteFile(filepath.Join(kontainer, "cgroup.procs"), []byte(pid), 0700))
 }
 
 func must(err error) {
